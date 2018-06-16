@@ -54,10 +54,9 @@ namespace Blink
             File.WriteAllText($"/sys/class/gpio/gpio{Number}/direction", Direction.ToString().ToLower());
         }
 
-        public async Task SetValue(PinValue value)
+        public Task SetValue(PinValue value)
         {
-            Console.WriteLine($"Setting Pin {Number} to {value}");
-            await File.WriteAllTextAsync($"/sys/class/gpio/gpio{Number}/value", ((int)value).ToString());
+            return File.WriteAllTextAsync($"/sys/class/gpio/gpio{Number}/value", ((int)value).ToString());
         }
 
         private bool _disposed;
@@ -78,7 +77,6 @@ namespace Blink
 
             UnExport();
             _disposed = true;
-            Console.WriteLine("Pin disposed");
         }
     }
 

@@ -12,6 +12,7 @@ namespace Blink
                 {
                     pin17.SetValue(PinValue.High).Wait();
                     System.Threading.Thread.Sleep(TimeSpan.FromMilliseconds(250));
+                    
                     pin17.SetValue(PinValue.Low).Wait();
                     System.Threading.Thread.Sleep(TimeSpan.FromMilliseconds(250));
                 }
