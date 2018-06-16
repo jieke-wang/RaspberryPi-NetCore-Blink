@@ -12,8 +12,8 @@ namespace Blink
 
     public enum PinValue
     {
-        Low,
-        High
+        Low = 0,
+        High = 1
     }
 
     public class GpioPin : IDisposable
@@ -57,7 +57,7 @@ namespace Blink
         public async Task SetValue(PinValue value)
         {
             Console.WriteLine($"Setting Pin {Number} to {value}");
-            await File.WriteAllTextAsync($"/sys/class/gpio/gpio{Number}/value", value == PinValue.High ? "1" : "0");
+            await File.WriteAllTextAsync($"/sys/class/gpio/gpio{Number}/value", ((int)value).ToString());
         }
 
         private bool _disposed;
