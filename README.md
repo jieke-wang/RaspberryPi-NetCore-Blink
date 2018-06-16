@@ -1,4 +1,4 @@
-Using docker as a deployment mechanism, this app shows how to write a simple .Net Core 2.1 console app which to blinks a light using RaspberryPi's GPIO file integrations
+Using docker as a deployment mechanism, this code shows how to write a simple .Net Core 2.1 console app which blinks a light using GPIO file integrations and the WiringPi api
 
 # Setup and running
 ## On your developer machine:
